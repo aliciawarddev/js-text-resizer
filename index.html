@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Size Controller</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%234a5568%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2216%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>Aa</text></svg>">
+    
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header-->
+        <h1>Text Size Controller</h1>
+
+        <!-- Button controls -->
+         <div class="controls">
+            <button id="decreaseBtn">Smaller -</button>
+            <span id="sizeDisplay">16px</span>
+            <button id="increaseBtn">Larger +</button>
+         </div>
+
+        <!-- Sample text to resize -->
+         <div class="text-content">
+            <p id="sampleText">
+                This is sample text. Use the buttons above to make this text larger or smaller. 
+                Watch how the font size changes as you click the buttons!
+            </p>
+         </div>
+
+        <!-- Reset to default button -->
+         <button id="resetBtn">Reset Size</button>
+
+        <!-- JavaScript file -->
+         <script src="script.js"></script>
+    </div>
+</body>
+</html>
