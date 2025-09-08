@@ -24,15 +24,13 @@
 
 /* Main body styling and centering */
 body {
-   font-family: 'Inter', sans-serif;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
-   background: var(--color-background);
-   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1.5" fill="%233a5f6f" opacity="0.06"/></svg>');
-   background-size: 60px 60px;
-   padding: 20px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f2ed 0%, #e8dfd5 100%);
+    padding: 20px;
 }
 
 /* White card container */
@@ -46,25 +44,6 @@ body {
    width: 100%;
    position: relative;
    border: 2px solid var(--color-primary);
-}
-
-/* Geometric accent lines */
-.container::before,
-.container::after {
-   content: '';
-   position: absolute;
-   width: 40px;
-   height: 3px;
-   background: var(--color-accent);
-   top: 30px;
-}
-
-.container::before {
-   left: 30px;
-}
-
-.container::after {
-   right: 30px;
 }
 
 /* Main heading */
@@ -186,10 +165,10 @@ button:active {
 
 /* Sample text styling */
 #sampleText {
-   font-family: 'Inter', sans-serif;
-   line-height: 1.6;
-   color: var(--color-text);
-   transition: font-size 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    transition: font-size 0.3s ease-in-out;
 }
 
 /* Reset button unique styling */
