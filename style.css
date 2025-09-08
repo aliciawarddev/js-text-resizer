@@ -1,17 +1,17 @@
-/* Define color variables - Navy and Coral theme */
+/* Define color variables - Warmer Navy and Coral MCM palette */
 :root {
-   --color-primary: #2c5f7c;        /* Deep ocean blue */
-   --color-primary-dark: #1e4558;   
-   --color-accent: #ff6b6b;         /* Coral red */
-   --color-accent-dark: #e55555;
-   --color-neutral: #4a5568;        /* Cool gray */
-   --color-neutral-dark: #2d3748;
-   --color-background: #f7fafc;     /* Cool light gray */
+   --color-primary: #3a5f6f;        /* Muted teal-blue */
+   --color-primary-dark: #2d4a57;   
+   --color-accent: #e07856;         /* Warm coral */
+   --color-accent-dark: #cc6444;
+   --color-neutral: #6b5d54;        /* Warm gray-brown */
+   --color-neutral-dark: #544841;
+   --color-background: #f5f2ed;     /* Warm off-white */
    --color-surface: white;
-   --color-surface-alt: #edf2f7;    /* Bluish white */
-   --color-text: #1a202c;           /* Almost black */
-   --color-text-light: #718096;
-   --color-border: #e2e8f0;
+   --color-surface-alt: #faf8f5;    /* Cream white */
+   --color-text: #2d2926;           /* Warm charcoal */
+   --color-text-light: #7a6f63;
+   --color-border: #e5dfd4;
    --color-shadow: rgba(0, 0, 0, 0.08);
 }
 
@@ -30,6 +30,8 @@ body {
    align-items: center;
    min-height: 100vh;
    background: var(--color-background);
+   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1.5" fill="%233a5f6f" opacity="0.06"/></svg>');
+   background-size: 60px 60px;
    padding: 20px;
 }
 
@@ -37,13 +39,32 @@ body {
 .container {
    background: var(--color-surface);
    padding: 50px 60px;
-   border-radius: 12px;
+   border-radius: 8px;
    box-shadow: 0 4px 20px var(--color-shadow);
    text-align: center;
    max-width: 600px;
    width: 100%;
    position: relative;
    border: 2px solid var(--color-primary);
+}
+
+/* Geometric accent lines */
+.container::before,
+.container::after {
+   content: '';
+   position: absolute;
+   width: 40px;
+   height: 3px;
+   background: var(--color-accent);
+   top: 30px;
+}
+
+.container::before {
+   left: 30px;
+}
+
+.container::after {
+   right: 30px;
 }
 
 /* Main heading */
@@ -75,25 +96,37 @@ h1 {
    align-items: center;
    gap: 24px;
    margin-bottom: 35px;
-   padding: 20px;
-   background: linear-gradient(135deg, var(--color-surface-alt), var(--color-surface));
-   border-radius: 8px;
+   padding: 25px;
+   background: var(--color-surface-alt);
+   border-radius: 6px;
    border: 1px solid var(--color-border);
 }
 
 /* Button styling */
 button {
    font-family: 'Oswald', sans-serif;
-   padding: 12px 24px;
+   padding: 14px 28px;
    font-size: 14px;
    font-weight: 500;
    border: 2px solid;
    background: var(--color-surface);
-   border-radius: 6px;
+   border-radius: 4px;
    cursor: pointer;
    text-transform: uppercase;
-   letter-spacing: 1.5px;
+   letter-spacing: 2px;
    transition: all 0.3s ease;
+   position: relative;
+}
+
+/* Button hover effect */
+button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+button:active {
+   transform: translateY(0);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* Increase button specific */
@@ -102,10 +135,9 @@ button {
    border-color: var(--color-primary);
 }
 
-#increaseBtn:hover {
+#increaseBtn:hover:not(:disabled) {
    background: var(--color-primary);
    color: var(--color-surface);
-   box-shadow: 0 2px 8px rgba(44, 95, 124, 0.3);
 }
 
 #increaseBtn:disabled {
@@ -119,10 +151,9 @@ button {
    border-color: var(--color-accent);
 }
 
-#decreaseBtn:hover {
+#decreaseBtn:hover:not(:disabled) {
    background: var(--color-accent);
    color: var(--color-surface);
-   box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
 }
 
 #decreaseBtn:disabled {
@@ -133,24 +164,24 @@ button {
 /* Size indicator styling */
 #sizeDisplay {
    font-family: 'Oswald', sans-serif;
-   font-size: 20px;
+   font-size: 24px;
    font-weight: 600;
-   color: var(--color-surface);
+   color: var(--color-primary);
    min-width: 80px;
-   padding: 8px 16px;
-   background: var(--color-primary);
-   border: none;
-   border-radius: 6px;
+   padding: 10px 20px;
+   background: var(--color-surface);
+   border: 3px solid var(--color-primary);
+   border-radius: 4px;
 }
 
 /* Text content area */
 .text-content {
-   background: linear-gradient(180deg, var(--color-surface), var(--color-surface-alt));
+   background: var(--color-surface-alt);
    padding: 40px;
-   border-radius: 8px;
+   border-radius: 6px;
    margin-bottom: 25px;
    min-height: 180px;
-   border: 1px solid var(--color-border);
+   border: 2px solid var(--color-border);
 }
 
 /* Sample text styling */

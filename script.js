@@ -13,14 +13,14 @@ const MIN_SIZE = 10;                                            // Smallest allo
 const MAX_SIZE = 32;                                            // Largest allowed size
 const DEFAULT_SIZE = 16;                                        // Store default for reference
 
-// Function to update the text size 
+// Function to update the text size
 function updateTextSize() {
-    sampleText.style.fontsize = currentSize + 'px';             // Apply size to text element
-    sizeDisplay.textContent = currentSize + 'px';               // Update the display number
-
-    // Disable buttons at limits 
-    increaseBtn.disabled = currentsize >= MAX_SIZE;             // Disable at max
-    descreaseBtn.disabled = currentSize <= MIN_SIZE;            // Disable at min
+    sampleText.style.fontSize = currentSize + 'px';           // Apply size to text element
+    sizeDisplay.textContent = currentSize + 'px';             // Update the display number
+    
+    // Disable buttons at limits
+    increaseBtn.disabled = currentSize >= MAX_SIZE;           // Disable at max
+    decreaseBtn.disabled = currentSize <= MIN_SIZE;           // Disable at min
 }
 
 // Function to increase text size 
