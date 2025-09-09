@@ -4,43 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Size Controller</title>
-
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%234a5568%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2216%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>Aa</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%233a5f6f%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2216%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>Aa</text></svg>">
     
-    <!-- External stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main container -->
     <div class="container">
-        <!-- Page title -->
+        <!-- Header -->
         <h1>Text Size Controller</h1>
-        <p class="subtitle">Adjust text size for better readability</p>
-
-        <!-- Button controls -->
-         <div class="controls">
-            <button id="decreaseBtn">Smaller -</button>
-            <span id="sizeDisplay">16px</span> <!-- Shows current size-->
-            <button id="increaseBtn">Larger +</button>
-         </div>
-
-        <!-- Sample text to resize -->
-         <div class="text-content">
+        
+        <!-- Main control buttons grouped together -->
+        <div class="button-group">
+            <button id="decreaseBtn" aria-label="Decrease size">
+                <span class="icon">−</span>
+                <span class="btn-label">Smaller</span>
+            </button>
+            
+            <button id="resetBtn">Reset</button>
+            
+            <button id="increaseBtn" aria-label="Increase size">
+                <span class="icon">+</span>
+                <span class="btn-label">Larger</span>
+            </button>
+        </div>
+        
+        <!-- Text preview header-->
+        <h3 id="sampleHeading">Typography Preview</h3>
+        <!-- Text preview area with size indicator -->
+        <div class="text-content">
+            <!-- Size display moved here -->
+            <div class="size-indicator" aria-live="polite">
+                <span id="sizeDisplay">16px</span>
+                <span id="sizePercentage">100%</span>
+            </div>
             <p id="sampleText">
-                This is sample text. Use the buttons above to make this text larger or smaller. 
-                Watch how the font size changes as you click the buttons!
+                Effective typography enhances readability and user experience. Adjust the text size to find your optimal reading comfort.
             </p>
-         </div>
-
-        <!-- Reset to default button -->
-         <button id="resetBtn">Reset Size</button>
-
-        <!-- JavaScript file -->
-         <script src="script.js"></script>
+        </div>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

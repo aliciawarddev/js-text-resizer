@@ -21,6 +21,11 @@ function updateTextSize() {
     // Disable buttons at limits
     increaseBtn.disabled = currentSize >= MAX_SIZE;           // Disable at max
     decreaseBtn.disabled = currentSize <= MIN_SIZE;           // Disable at min
+
+    // Percentage
+    const percentage = Math.round((currentSize / DEFAULT_SIZE) * 100);
+    const sizePercentage = document.getElementById('sizePercentage');
+    sizePercentage.textContent = percentage + '%';
 }
 
 // Function to increase text size 
@@ -47,7 +52,7 @@ function resetSize() {
 
 // Connect buttons to functions 
 increaseBtn.addEventListener('click', increaseSize);            // Larger button click
-descreaseBtn.addEventListener('click', decreaseSize);           // Smaller button click
+decreaseBtn.addEventListener('click', decreaseSize);           // Smaller button click
 resetBtn.addEventListener('click', resetSize);                  // Reset button click
 
 // Add keyboard support for accessibility
