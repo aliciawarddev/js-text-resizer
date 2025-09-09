@@ -43,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--color-background);
+    background: linear-gradient(135deg, #e8f0f5 0%, #dde8ee 100%);
     padding: var(--spacing-lg);
 }
 
